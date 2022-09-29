@@ -549,15 +549,10 @@ class Panel extends St.Widget {
         const button = event.type() === Clutter.EventType.BUTTON_PRESS
             ? event.get_button() : -1;
 
-        return global.display.begin_grab_op(
-            dragWindow,
+        return dragWindow.begin_grab_op(
             Meta.GrabOp.MOVING,
-            false, /* pointer grab */
             true, /* frame action */
-            button,
-            event.get_state(),
-            event.get_time(),
-            x, y) ? Clutter.EVENT_STOP : Clutter.EVENT_PROPAGATE;
+            event.get_time()) ? Clutter.EVENT_STOP : Clutter.EVENT_PROPAGATE;
     }
 
     _onButtonPress(actor, event) {
