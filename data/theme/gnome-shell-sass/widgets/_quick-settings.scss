@@ -83,7 +83,10 @@
       padding: 1.5 * $base_padding;
       background-color: transparentize($fg_color, 0.8);
 
-      &.active { background-color: $selected_bg_color;}
+      &.active {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+      }
     }
 
     & .title {

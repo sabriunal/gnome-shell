@@ -23,6 +23,7 @@ $app_icon_size: 96px;
   .overview-icon {
     padding: $base_padding*2;
     border-radius: $base_border_radius*3;
+    color: $osd_fg_color;
   }
   .overview-icon.overview-icon-with-label {
     > StBoxLayout {
@@ -38,6 +39,7 @@ $app_icon_size: 96px;
 
 // expanded folder
 .app-folder-dialog {
+
   border-radius: $modal_radius*4;
   background-color: $bg_color;
   padding: $base_padding*2;
