@@ -546,11 +546,10 @@ class Panel extends St.Widget {
         if (!dragWindow)
             return Clutter.EVENT_PROPAGATE;
 
-        const button = event.type() === Clutter.EventType.BUTTON_PRESS
-            ? event.get_button() : -1;
-
         return dragWindow.begin_grab_op(
             Meta.GrabOp.MOVING,
+            event.get_device(),
+            event.get_event_sequence(),
             event.get_time()) ? Clutter.EVENT_STOP : Clutter.EVENT_PROPAGATE;
     }
 
